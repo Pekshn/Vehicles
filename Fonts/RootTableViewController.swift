@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class RootTableViewController: UITableViewController {
 
@@ -22,16 +24,18 @@ class RootTableViewController: UITableViewController {
         }
     }
 
-    struct Vehicle: Decodable {
-        let Azimuth: Int
-        let Contact: Bool
-        let Lat: Int
-        let Lon: Int
-        let Name: String
-        let Registration: String
-        let Speed: Int
-        let Timestamp: String
-    }
+   // var x: [Vehicle] = []
+    
+//    struct Vehicle {
+//        let Azimuth: Int
+//        let Contact: Bool
+//        let Lat: Int
+//        let Lon: Int
+//        let Name: String
+//        let Registration: String
+//        let Speed: Int
+//        let Timestamp: String
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,26 +46,25 @@ class RootTableViewController: UITableViewController {
         fetchJSON()
     }
     
-    fileprivate func fetchJSON() {
-        let jsonUrlString = "https://api.myjson.com/bins/j9onm"
-        guard let url = URL(string: jsonUrlString) else {return}
-        URLSession.shared.dataTask(with: url) { (data, _, err) in
-            DispatchQueue.main.async {
-                if let err = err {
-                    print("Failed to get data from url:", err)
-                    return
+    func fetchJSON() {
+        DispatchQueue.main.async {
+            request("https://api.myjson.com/bins/j9onm").responseJSON(completionHandler: { (response) in
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    print(json)
+                    json.array?.forEach({ (user) in
+                        let user = Vehicle(Azimuth: user["Azimuth"].intValue, Contact: user["Contact"].boolValue, Lat: user["Lat"].intValue, Lon: user["Lon"].intValue, Name: user["Name"].stringValue, Registration: user["Registration"].stringValue, Speed: user["Speed"].intValue, Timestamp: user["Timestamp"].stringValue)
+                        self.vehicles.append(user)
+                    })
+                    self.tableView.reloadData()
+                case .failure(let error):
+                    print(error.localizedDescription)
                 }
-                guard let data = data else {return}
-                do {
-                    let decoder = JSONDecoder()
-                    self.vehicles = try decoder.decode([Vehicle].self, from: data)
-                } catch let jsonErr {
-                    print("Failed to decode:", jsonErr)
-                }
-            }
-            }.resume()
+            })
+        }
     }
-    
+
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

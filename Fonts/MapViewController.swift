@@ -18,7 +18,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     @IBOutlet weak var upperSpeedLabel: UILabel!
     @IBOutlet weak var mapView: GMSMapView!
     
-    var vehicle: RootTableViewController.Vehicle!
+    var vehicle: Vehicle!
 
     override func viewDidLoad() {
         super.viewDidLoad()

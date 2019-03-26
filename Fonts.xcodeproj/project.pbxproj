@@ -15,6 +15,7 @@
 		CE5D3AD521CE970600E92BF5 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D3AD421CE970600E92BF5 /* SecondViewController.swift */; };
 		CE5D3AD721CEBB5B00E92BF5 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = CE5D3AD621CEBB5B00E92BF5 /* Podfile */; };
 		CE5D3AD921CEC1AB00E92BF5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D3AD821CEC1AB00E92BF5 /* MapViewController.swift */; };
+		CEAC66122249AFAC004268A5 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC66112249AFAC004268A5 /* Vehicle.swift */; };
 		CEAE0D412235DD6A009ED18A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAE0D3F2235DD6A009ED18A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -29,8 +30,9 @@
 		CE5D3AC821CC4B1A00E92BF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE5D3AD021CC519B00E92BF5 /* RootTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
 		CE5D3AD421CE970600E92BF5 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		CE5D3AD621CEBB5B00E92BF5 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		CE5D3AD621CEBB5B00E92BF5 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CE5D3AD821CEC1AB00E92BF5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		CEAC66112249AFAC004268A5 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		CEAE0D402235DD6A009ED18A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 		CE5D3ABB21CC4B1900E92BF5 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				CEAC66132249B0EF004268A5 /* Model */,
 				CE5D3ABC21CC4B1900E92BF5 /* AppDelegate.swift */,
 				CE5D3AC021CC4B1900E92BF5 /* Main.storyboard */,
 				CEAE0D3F2235DD6A009ED18A /* LaunchScreen.storyboard */,
@@ -95,6 +98,14 @@
 				CE5D3AD821CEC1AB00E92BF5 /* MapViewController.swift */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CEAC66132249B0EF004268A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEAC66112249AFAC004268A5 /* Vehicle.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +234,7 @@
 				CE5D3AD521CE970600E92BF5 /* SecondViewController.swift in Sources */,
 				CE5D3ABD21CC4B1900E92BF5 /* AppDelegate.swift in Sources */,
 				CE5D3AD121CC519B00E92BF5 /* RootTableViewController.swift in Sources */,
+				CEAC66122249AFAC004268A5 /* Vehicle.swift in Sources */,
 				CE5D3AD921CEC1AB00E92BF5 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

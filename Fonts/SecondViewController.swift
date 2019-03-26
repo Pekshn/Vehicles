@@ -29,7 +29,7 @@ class SecondViewController: UIViewController {
     var speed:String!
     var timestamp:String!
     
-    var vehicle: RootTableViewController.Vehicle!
+    var vehicle: Vehicle!
     
     override func viewDidLoad() {
         super.viewDidLoad()
