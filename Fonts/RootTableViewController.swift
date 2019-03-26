@@ -24,19 +24,6 @@ class RootTableViewController: UITableViewController {
         }
     }
 
-   // var x: [Vehicle] = []
-    
-//    struct Vehicle {
-//        let Azimuth: Int
-//        let Contact: Bool
-//        let Lat: Int
-//        let Lon: Int
-//        let Name: String
-//        let Registration: String
-//        let Speed: Int
-//        let Timestamp: String
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Vehicles List"
